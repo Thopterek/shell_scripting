@@ -13,3 +13,7 @@ while :; do
 	esac # just case backwards just like with if and fi
 done
 echo "Dang"
+
+echo "doing some little program input -> ac $# and then -> av are $@"
+echo "rule is that * $* does not preserve white space and quotes (should be avoided)"
+echo "program name $0, second param $1 and so on till... $9"
