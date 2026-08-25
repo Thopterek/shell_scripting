@@ -18,3 +18,19 @@ for file in *; do
 	#	mv new_type.asm ${file}.asm
 	#	echo "Added extra ASM to new_type.asm? -> $file"
 done
+
+echo "Create directories in non loop"
+mkdir rc{0,1,2,3,S}.d
+echo "Checking the result $?"
+ls
+echo "Removing directories same way"
+rm -rf rc{0,1,2,3,S}.d
+echo "Checking the result $? && getting new directories"
+
+for run in 0 1 2 3 S; do
+	mkdir rc${run}.d
+done
+ls
+echo "Removing them now"
+rm -rf rc{0,1,2,3,S}.d
+ls
