@@ -9,3 +9,17 @@ echo "it works"
 if [ "$?" -ne "0" ]; then
 	echo "There was an error or smth"
 fi
+
+echo "PID of current -> $$, good use for some touch /tmp/skrr.$$"
+echo "PID of last run background process -> $!"
+echo "and there is some $IFS Internal Field Separator (default is space tab newline)"
+
+OLD_IFS="$IFS"
+IFS=:
+echo "Input data separated by colons (:)"
+read x y z
+echo "x is $x y is $y z is $z"
+
+# should be written most likely with saving OLD_IFS but not sure why right now other than reset
+echo "resetting the IFS"
+IFS=$OLD_IFS
