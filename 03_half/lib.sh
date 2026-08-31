@@ -1,5 +1,4 @@
-#!/bin/sh
-
+# no extra setting up for SH so it doesn't spawn extra shell
 # procedures:
 # does not return a value but may produce output
 # function
@@ -16,4 +15,23 @@ non_change() {
 	echo "\$2 is $2"
 	echo "We can only change variable like $a saved as a"
 	a="Goodbye"
+}
+
+factorial() {
+	if [ "$1" -gt "1" ]; then
+		i=$(expr $1 - 1)
+		j=$(factorial $i)
+		k=$(expr $1 \* $j)
+		echo $k
+	else
+		echo 1
+	fi
+}
+
+return_with() {
+	FIRST=$2
+	useradd -c "${FIRST}"
+	if [ "$?" -ne "0" ]; then
+		return 1
+	fi
 }
