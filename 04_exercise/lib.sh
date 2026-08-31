@@ -22,3 +22,28 @@ prog_start() {
 		return 1
 	fi
 }
+
+display_menu() {
+	echo "###################################"
+	echo "----- Welcome to address book -----"
+	echo "use only a number to choose options"
+	echo "1) Adding new data (name, email, .)"
+	echo "2) Remove data from the book"
+	echo "3) Edit the data inside the book"
+	echo "4) Search the records for data"
+	echo "5) Exit"
+	echo -n "Choose one of the options above: "
+}
+
+check_input() {
+	echo $INPUT | grep "[1-5]" >/dev/null 2>&1
+	STATUS=$?
+	while [ "$STATUS" != "0" ]; do
+		echo -n "Error: $INPUT is not a supported option, try again: "
+		read INPUT
+		echo $INPUT | grep "[1-5]" >/dev/null 2>&1
+		STATUS=$?
+	done
+	clear
+	echo "--- Menu for option: $INPUT ---"
+}
