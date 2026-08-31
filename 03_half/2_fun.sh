@@ -25,3 +25,9 @@ echo "x is $x"
 calling_from_lib 1 2 3
 echo "x is $x"
 echo "there is no scope of variables soooooo double checking everything"
+echo "--- and there are some weird things about it like ---"
+a=Hello
+b=World
+non_change $a $b
+echo "a is $a"
+echo "b is $b"
