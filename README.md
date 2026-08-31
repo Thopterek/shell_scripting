@@ -1,5 +1,7 @@
 # Quick Reference
 
+> all thanks to [this tutorial](https://www.shellscript.sh/)
+
 Command | Description | Example
 --- | --- | ---
 & | Run the previous command in the background | ls &
