@@ -12,6 +12,7 @@ prog_start() {
 		echo "$AV"
 	fi
 	echo "--- enjoy (b)playing around ---"
+	echo "###############################"
 	echo "To continue click enter: "
 	read INPUT
 	if [ "$INPUT" = "" ]; then
